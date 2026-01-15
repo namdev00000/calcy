@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calcy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="app-title">My Calcy</h1>
+            <div class="controls">
+                <div class="sound-control">
+                    <label for="sound-toggle">Sound</label>
+                    <input type="checkbox" id="sound-toggle" checked>
+                    <span class="toggle-slider"></span>
+                </div>
+                <button id="theme-toggle" title="Toggle Theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <button id="history-btn" title="View History">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 3v5h5" />
+                        <path d="M3.05 13A9 9 0 1 0 6 5.3L3 8" />
+                        <path d="M12 7v5l4 2" />
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Feature Icons Bar -->
+        <div class="feature-bar">
+            <div class="feature-group left">
+                <button class="feature-btn" data-feature="evenodd" title="Even or Odd">
+                    <span>#</span>
+                </button>
+                <button class="feature-btn" data-feature="square" title="Square (x²)">
+                    <span>x²</span>
+                </button>
+                <button class="feature-btn" data-feature="cube" title="Cube (x³)">
+                    <span>x³</span>
+                </button>
+                <button class="feature-btn" data-feature="percentage" title="Percentage Calculator">
+                    <span>%</span>
+                </button>
+            </div>
+            <div class="feature-group right">
+                <button class="feature-btn" data-feature="sqrt" title="Square Root (√)">
+                    <span>√</span>
+                </button>
+                <button class="feature-btn" data-feature="cbrt" title="Cube Root (∛)">
+                    <span>∛</span>
+                </button>
+                <button class="feature-btn" data-feature="table" title="Multiplication Table">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7" />
+                        <rect x="14" y="3" width="7" height="7" />
+                        <rect x="3" y="14" width="7" height="7" />
+                        <rect x="14" y="14" width="7" height="7" />
+                    </svg>
+                </button>
+                <button class="feature-btn" data-feature="prime" title="Prime Number Check">
+                    <span>P</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Sound Selector -->
+        <div class="sound-selector">
+            <label for="sound-type">Click Sound:</label>
+            <select id="sound-type">
+                <option value="click1">Classic Click</option>
+                <option value="click2">Soft Pop</option>
+                <option value="click3">Beep</option>
+                <option value="click4">Tap</option>
+            </select>
+        </div>
+
+        <div class="calculator">
+            <div class="display">
+                <span class="emoji-indicator" id="emoji-indicator"></span>
+                <div class="previous-operand"></div>
+                <div class="current-operand">0</div>
+            </div>
+
+            <div class="keypad">
+                <button class="btn fn span-two" data-action="clear">AC</button>
+                <button class="btn fn" data-action="delete">DEL</button>
+                <button class="btn operator" data-action="divide">÷</button>
+
+                <button class="btn number" data-number="7">7</button>
+                <button class="btn number" data-number="8">8</button>
+                <button class="btn number" data-number="9">9</button>
+                <button class="btn operator" data-action="multiply">×</button>
+
+                <button class="btn number" data-number="4">4</button>
+                <button class="btn number" data-number="5">5</button>
+                <button class="btn number" data-number="6">6</button>
+                <button class="btn operator" data-action="subtract">-</button>
+
+                <button class="btn number" data-number="1">1</button>
+                <button class="btn number" data-number="2">2</button>
+                <button class="btn number" data-number="3">3</button>
+                <button class="btn operator" data-action="add">+</button>
+
+                <button class="btn number span-two zero" data-number="0">0</button>
+                <button class="btn number" data-number=".">.</button>
+                <button class="btn equals" data-action="calculate">=</button>
+            </div>
+
+            <div class="history-view hidden">
+                <div class="history-header">
+                    <h3>History</h3>
+                    <div class="header-actions">
+                        <button id="clear-history" title="Clear All">Clear All</button>
+                        <button id="close-history" title="Close">×</button>
+                    </div>
+                </div>
+                <div class="history-list">
+                    <p class="no-history">No history yet</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature Popup Modal -->
+        <div id="feature-popup" class="popup-overlay hidden">
+            <div class="popup-content">
+                <button class="popup-close" id="popup-close">×</button>
+                <h3 id="popup-title">Feature</h3>
+
+                <!-- Percentage mode selector (hidden for other features) -->
+                <div id="percentage-mode-selector" class="percentage-modes hidden">
+                    <label><input type="radio" name="pct-mode" value="1" checked> Whole + Part → %</label>
+                    <label><input type="radio" name="pct-mode" value="2"> Whole + % → Part</label>
+                    <label><input type="radio" name="pct-mode" value="3"> Part + % → Whole</label>
+                </div>
+
+                <input type="number" id="popup-input" placeholder="Enter a number" />
+                <input type="number" id="popup-input2" class="hidden" placeholder="Enter second value" />
+                <button class="popup-enter" id="popup-enter">Enter</button>
+                <div id="popup-result" class="popup-result"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
