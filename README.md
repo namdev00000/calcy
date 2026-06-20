@@ -1,6 +1,6 @@
-# My Calcy - A Versatile Calculator
+# Calculator - A Versatile Calculator
 
-My Calcy is a modern, interactive web-based calculator that goes beyond basic arithmetic, offering a suite of advanced mathematical functions, theme customization, and an intuitive user experience. This project was brought to life with the creative assistance of Google Antigravity Vibe Coding (Gemini CLI).
+This calculator is a modern, interactive web-based calculator that goes beyond basic arithmetic, offering a suite of advanced mathematical functions, theme customization, and an intuitive user experience. This project was brought to life with the creative assistance of Google Antigravity Vibe Coding (Gemini CLI).
 
 ## Features
 
